@@ -13,6 +13,7 @@ const boton = document.querySelector("[data-form-btn]");
 console.log(boton);
 console.log(entrada);
 
+//revisar
 boton.addEventListener("click", function (){
     console.log("prueba");
 });
