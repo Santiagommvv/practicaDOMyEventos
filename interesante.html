@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<title>practica</title>
+
+<!-- 
+	como tag style en el cabecero
+	significando que para etiquetas p,
+	usar esa propiedad por defecto
+-->
+	<style>
+		h2{
+			text-align: center;
+		}
+		p{
+			text-align: center;
+		}
+	</style>
+	
+<!-- si tengo archivo, entonces
+	acá iría <link rel="stylesheet" href="pathalarchivo.css"> ¿no cierra?-->	
+</head>
+<body>
+<!-- inlining-->
+<nav>
+  <ul>
+	<li style="display:inline; padding-left:300px">estitito</li>
+	<li style="display:inline; padding-left:300px">estito</li>
+	<li style="display:inline; padding-left:300px">esto</li>
+  </ul>
+</nav>
+	<h2> Let's die, please.</h2>
+	<p style="font-size: 20px">Texto loco
+	<br/>qué tan loco es éste texto
+	<br/>yo jamás podré saberlo
+	<br/>
+	</p>
+	<p>
+	<input/>
+	<button>Verificar si acertó el número</button>
+	</p>
+	<script>
+
+		var secreto = 5;
+		var input = document.querySelector("input");
+
+		function verificar(){
+			if(parseInt(input.value) == secreto){
+				alert("correcto");
+			}
+			else{
+				alert("Incorrecto");
+			}
+		}
+		
+		/*function verificar(valor){
+			if(valor == secreto){
+				alert("correcto");
+			}
+			else{
+				alert("Incorrecto");
+			}
+		}*/
+		
+		var button = document.querySelector("button");
+		button.onclick = verificar;
+
+	</script>
+</body>
+</html>
