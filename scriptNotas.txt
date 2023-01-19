@@ -1,0 +1,19 @@
+La primera demostración 
+    es un hardcodeo de tags li HTML "on demand"
+
+La segunda demostración
+    es querySelectear al tag [data-XXX], que devuelve variable.nombreClase de dicho HTML
+
+La tercera demostración
+    es querySelectear el input y el input.value (mediante [data-XXX])
+
+La cuarta demostración 
+    es crear el addEventListener para el evento que me interesa (click en éste caso)
+    en cuyo cuerpo se llama a una función anónima, tranquilamente definida afuera
+    con el input.value
+    input.value captura solo el texto
+    input a secas captura todo el objeto, y por ende el html "del que es reponsable"
+    preventDefault() se hace acá para que  no se refresque la página
+        cuyo refrescado producía el simil GET, si consolelogeaba input.value
+
+La quinta demostración 

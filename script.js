@@ -1,19 +1,12 @@
-/*
-    -tengo formulario
-    -mi interés es agregarle li's
-    -pruebo a mano
-    -selector que me devuelve dicho HTML, a variable
-    -llamo addEventListener a dicha variable
-    -después programo la lógica, pero del input
-*/
-
-const entrada = document.querySelector("[data-form-input]");
-
+//var que apunta al HTML que genera el botón 
 const boton = document.querySelector("[data-form-btn]");
-console.log(boton);
-console.log(entrada);
 
-//revisar
-boton.addEventListener("click", function (){
-    console.log("prueba");
-});
+//declaración de la función que quiero pasarle al listener
+const crearTarea = (evento) => {
+    evento.preventDefault();
+    const entrada = document.querySelector("[data-form-input]");
+    const valorEntrada = (entrada.value);
+}
+
+//funcionalidad del botón
+boton.addEventListener('click', crearTarea);
