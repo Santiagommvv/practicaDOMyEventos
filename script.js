@@ -1,3 +1,9 @@
+//var que apunta al HTML que genera el botón 
+const boton = document.querySelector('[data-form-btn]');
+
+//funcionalidad del botón
+boton.addEventListener('click', crearTarea);
+
 //declaración de la función que quiero pasarle al listener
 const crearTarea = (evento) => {
   evento.preventDefault();
@@ -14,9 +20,4 @@ const nuevaTarea = `<div>
  //console.log(nuevaTarea);
 }
 
-//var que apunta al HTML que genera el botón 
-const boton = document.querySelector('[data-form-btn]');
-
-//funcionalidad del botón
-boton.addEventListener('click', crearTarea);
 
