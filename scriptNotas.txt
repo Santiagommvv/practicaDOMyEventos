@@ -16,4 +16,39 @@ La cuarta demostración
     preventDefault() se hace acá para que  no se refresque la página
         cuyo refrescado producía el simil GET, si consolelogeaba input.value
 
-La quinta demostración 
+La quinta demostración
+    la más importante después de crear el evento
+    es tagear con un data-XXX el li card, 
+    porque son esos elementos los que quiero generar (data-tarea)
+    mi nuevo data-tarea tiene que copiar todo el contenido para crear una tarjeta
+        es decir: 
+                LI
+                  <div>
+                    <i{icono}></i><span>contenido texto</span>
+                  </div>
+                  <i{otroIcono}></i>
+                FIN LI
+    la "característica" que uso de JS para generar este HTML es "template strings" (con backtics) 
+
+La sexta demostración (for clarity sake)
+    es que tenemos data-XXX referido a <input>, a <button> y a <li>
+    el boton se querySelecciona para evento
+    el evento se previeneDefault, se querySelecciona input
+    input.value actual análogo a un "temp"
+    input.value posterior se vacía
+    variable se le asigna un template string conteniendo: 
+        el li a producir y el "temp" (input.value)
+    esta combinación se le asigna a un [data-tarea].innerHTML 
+    funcionalidad hasta ESTE momento
+        el input es capturado, el placeholder queda en blanco después de "agregar" la tarea
+        la tarea sobreescribe la tarea que ya viene definida
+        es decir que hay que modificarle la capacidad de contener más de un LI
+    otra observación:
+        estilísticamente queda bien poner la función arriba de todo como si fuera una función de C/C++
+        pero el script no tiene sentido (aunque funciona) si no empieza por el botón, que es el primer elemento 
+        que el JS toma del HTML y le agrega el evento que llama a todo lo demás
+        así que la estructura por ahora es:
+            1-boton -> selecciona HTML tal y tal
+            2-boton -> addEventListener
+            3-función del evento                
+
