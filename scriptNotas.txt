@@ -52,3 +52,7 @@ La sexta demostración (for clarity sake)
             2-boton -> addEventListener
             3-función del evento                
 
+La séptima demostración
+    se deshace del data-task porque borra la clase con ese tag. En lugar de permanecer <li>
+    usa el data- attribute sobre el <ul>
+    en éste caso nombre data-list
