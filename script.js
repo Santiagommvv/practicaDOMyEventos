@@ -11,12 +11,13 @@ const crearTarea = (evento) => {
     entrada.value = "";
 
   const tarea = document.createElement('li');
+    tarea.classList.add('card');
+
   const contenido = `<div>
                      <i class="far fa-check-square icon"></i>
                      <span class="task">${valorEntrada}</span>
                     </div>
                     <i class="fas fa-trash-alt trashIcon icon"></i>`;
-
    tarea.innerHTML = contenido;                    
    listaTareas.appendChild(tarea);
 }
