@@ -1,8 +1,17 @@
 //var que apunta al HTML que genera el botón 
 const boton = document.querySelector('[data-form-btn]');
 
-//declaración de la función que quiero pasarle al listener
-const crearTarea = (evento) => {
+const checkComplete = () => {
+  const i = document.createElement("i");
+  i.classList.add("far");
+  i.classList.add("fa-check-square");
+  i.classList.add("icon");
+
+  return i;
+}
+
+//re-escrito
+const creartask = (evento) => {
   evento.preventDefault();
   
   const entrada = document.querySelector('[data-form-input]');
@@ -10,18 +19,32 @@ const crearTarea = (evento) => {
   const valorEntrada = entrada.value;
     entrada.value = "";
 
-  const tarea = document.createElement('li');
-    tarea.classList.add('card');
+  const task = document.createElement('li');
+    task.classList.add('card');
 
-  const contenido = `<div>
-                     <i class="far fa-check-square icon"></i>
+    const taskContent = document.createElement("div");
+    
+    taskContent.appendChild(checkComplete());
+
+    const titleTask = document.createElement("span");
+    titleTask.classList.add("task");
+
+    titleTask.innerText = value
+    task.appendChild(taskContent);
+    taskContent.appendChild(titleTask);
+
+
+  const content = `<div>
+                     ${checkComplete()};
                      <span class="task">${valorEntrada}</span>
                     </div>
                     <i class="fas fa-trash-alt trashIcon icon"></i>`;
-   tarea.innerHTML = contenido;                    
-   listaTareas.appendChild(tarea);
+   task.innerHTML = content;                    
+   listatasks.appendChild(task);
 }
 
+
+
 //funcionalidad del botón
-boton.addEventListener('click', crearTarea);
+boton.addEventListener('click', creartask);
 

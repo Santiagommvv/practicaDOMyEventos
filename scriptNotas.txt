@@ -56,3 +56,9 @@ La séptima demostración
     se deshace del data-task porque borra la clase con ese tag. En lugar de permanecer <li>
     usa el data- attribute sobre el <ul>
     en éste caso nombre data-list
+
+La octava demostración
+    hace una función para llamar desde el template string con ${}
+    a la función que agrega el html correspondiente al tag i y al contenido que llama a font awesome
+    hay que partirlo en varios llamados, porque no deja pasar un string con espacios la función .classList.add()
+    pero en pantalla muestra [HTMLObject] así que ahora lo va a stringify-car o parsear con "JSON."     
