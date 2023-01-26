@@ -1,4 +1,3 @@
-//var que apunta al HTML que genera el botón 
 const boton = document.querySelector('[data-form-btn]');
 
 const checkComplete = () => {
@@ -10,41 +9,48 @@ const checkComplete = () => {
   return i;
 }
 
-//re-escrito
+
 const creartask = (evento) => {
+  //no refresques
   evento.preventDefault();
   
+  //declaraciones
   const entrada = document.querySelector('[data-form-input]');
   const listaTareas = document.querySelector('[data-list]');
   const valorEntrada = entrada.value;
-    entrada.value = "";
-
   const task = document.createElement('li');
-    task.classList.add('card');
+  const taskContent = document.createElement("div");
+  const titleTask = document.createElement("span");
 
-    const taskContent = document.createElement("div");
-    
-    taskContent.appendChild(checkComplete());
+  //estilos
+  task.classList.add('card');
+  titleTask.classList.add("task");
+  
+  //comportamiento
+  entrada.value = "";
+  titleTask.innerText = valorEntrada;
+  taskContent.appendChild(checkComplete());
+  taskContent.appendChild(titleTask);  // <div> append: <i fontawesome></i> 
+                                       // append: <span>innerText=valorEntrada</span>
+  task.appendChild(taskContent);       // <li> recibe taskContent            
+  listaTareas.appendChild(task);       // <ul data-list> recibe task
 
-    const titleTask = document.createElement("span");
-    titleTask.classList.add("task");
-
-    titleTask.innerText = value
-    task.appendChild(taskContent);
-    taskContent.appendChild(titleTask);
-
-
+  /*
   const content = `<div>
                      ${checkComplete()};
                      <span class="task">${valorEntrada}</span>
                     </div>
                     <i class="fas fa-trash-alt trashIcon icon"></i>`;
-   task.innerHTML = content;                    
-   listatasks.appendChild(task);
+                    
+                    esto debería sobrar
+
+
+   task.innerHTML = content;
+                  esta asignación tenía sentido en el contexto del template
+   
+   */
 }
 
 
-
-//funcionalidad del botón
 boton.addEventListener('click', creartask);
 
