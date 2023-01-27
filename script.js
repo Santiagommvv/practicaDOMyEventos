@@ -34,21 +34,6 @@ const creartask = (evento) => {
                                        // append: <span>innerText=valorEntrada</span>
   task.appendChild(taskContent);       // <li> recibe taskContent            
   listaTareas.appendChild(task);       // <ul data-list> recibe task
-
-  /*
-  const content = `<div>
-                     ${checkComplete()};
-                     <span class="task">${valorEntrada}</span>
-                    </div>
-                    <i class="fas fa-trash-alt trashIcon icon"></i>`;
-                    
-                    esto debería sobrar
-
-
-   task.innerHTML = content;
-                  esta asignación tenía sentido en el contexto del template
-   
-   */
 }
 
 
