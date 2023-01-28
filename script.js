@@ -36,6 +36,6 @@ const creartask = (evento) => {
   listaTareas.appendChild(task);       // <ul data-list> recibe task
 }
 
-
+//evento
 boton.addEventListener('click', creartask);
 
