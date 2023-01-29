@@ -38,4 +38,5 @@ const creartask = (evento) => {
 
 //evento
 boton.addEventListener('click', creartask);
+/*agregar diferentes eventos*/ 
 
