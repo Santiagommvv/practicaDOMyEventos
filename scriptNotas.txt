@@ -59,6 +59,11 @@ La séptima demostración
 
 La octava demostración
     hace una función para llamar desde el template string con ${}
-    a la función que agrega el html correspondiente al tag i y al contenido que llama a font awesome
-    hay que partirlo en varios llamados, porque no deja pasar un string con espacios la función .classList.add()
-    pero en pantalla muestra [HTMLObject] así que ahora lo va a stringify-car o parsear con "JSON."     
+    a la función que agrega el html correspondiente al tag i 
+    y al contenido que llama a font awesome     
+
+
+novena?
+
+le asigna module al atributo type al <script> en el index.html
+para que funcionen import/export

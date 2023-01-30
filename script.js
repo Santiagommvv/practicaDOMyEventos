@@ -1,12 +1,7 @@
+import checkComplete from "./componentes/checkComplete.js";
+import deleteIcon from "./componentes/deleteIcon.js";
+
 const boton = document.querySelector('[data-form-btn]');
-
-const checkComplete = () => {
-  const i = document.createElement("i");
-  i.classList.add("far", "fa-check-square", "icon");
-
-  return i;
-}
-
 
 const creartask = (evento) => {
   //no refresques
@@ -27,14 +22,14 @@ const creartask = (evento) => {
   //comportamiento
   entrada.value = "";
   titleTask.innerText = valorEntrada;
-  taskContent.appendChild(checkComplete());
-  taskContent.appendChild(titleTask);  // <div> append: <i fontawesome></i> 
-                                       // append: <span>innerText=valorEntrada</span>
-  task.appendChild(taskContent);       // <li> recibe taskContent            
-  listaTareas.appendChild(task);       // <ul data-list> recibe task
+  taskContent.appendChild(checkComplete());  // div ap <i>
+  taskContent.appendChild(titleTask);        // div ap span, c/innerText
+  task.appendChild(taskContent);             // li ap la estructura anterior
+  task.appendChild(deleteIcon());            // li ap <i>
+  listaTareas.appendChild(task);             // <ul data-list> ap li
 }
 
 //evento
 boton.addEventListener('click', creartask);
-/*agregar diferentes eventos*/ 
 
+//})();
