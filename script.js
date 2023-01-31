@@ -1,4 +1,4 @@
-import checkComplete from "./componentes/checkComplete.js";
+import checkComplete from "./componentes/checkComplete.js"; /*necesita un servidor, o viola CORS*/ 
 import deleteIcon from "./componentes/deleteIcon.js";
 
 const boton = document.querySelector('[data-form-btn]');
@@ -32,4 +32,4 @@ const creartask = (evento) => {
 //evento
 boton.addEventListener('click', creartask);
 
-//})();
+//})(); //IIFE para agregar después.
