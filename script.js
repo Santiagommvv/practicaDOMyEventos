@@ -3,6 +3,7 @@ import deleteIcon from "./componentes/deleteIcon.js";
 
 const boton = document.querySelector('[data-form-btn]');
 
+
 const creartask = (evento) => {
   //no refresques
   evento.preventDefault();
@@ -14,6 +15,11 @@ const creartask = (evento) => {
   const task = document.createElement('li');
   const taskContent = document.createElement("div");
   const titleTask = document.createElement("span");
+  //apariencia varía navegador a navegador
+  const calendar = document.querySelector('[data-form-date]');
+  const date = calendar.value;
+  console.log(date);
+
 
   //estilos
   task.classList.add('card');
