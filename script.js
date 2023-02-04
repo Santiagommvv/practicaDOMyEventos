@@ -18,7 +18,8 @@ const creartask = (evento) => {
   //apariencia varía navegador a navegador
   const calendar = document.querySelector('[data-form-date]');
   const date = calendar.value;
-  console.log(date);
+  //const dateFormat = moment(date).format('DD/MM/YYYY');
+  //console.log(dateFormat);
 
 
   //estilos
