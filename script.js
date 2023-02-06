@@ -1,42 +1,41 @@
-import checkComplete from "./componentes/checkComplete.js"; /*necesita un servidor, o viola CORS*/ 
-import deleteIcon from "./componentes/deleteIcon.js";
+import checkComplete from './componentes/checkComplete.js';
+import deleteIcon from './componentes/deleteIcon.js';
 
-const boton = document.querySelector('[data-form-btn]');
+const btn = document.querySelector('[data-form-btn]');
 
+const addTask = (evento) => {
+  const list = document.querySelector('[data-list]');
+  const task = createTask(evento);
+  list.appendChild(task);
+};
 
-const creartask = (evento) => {
-  //no refresques
+const createTask = (evento) => {
   evento.preventDefault();
-  
-  //declaraciones
-  const entrada = document.querySelector('[data-form-input]');
-  const listaTareas = document.querySelector('[data-list]');
-  const valorEntrada = entrada.value;
-  const task = document.createElement('li');
-  const taskContent = document.createElement("div");
-  const titleTask = document.createElement("span");
-  //apariencia varía navegador a navegador
+  const input = document.querySelector('[data-form-input]');
   const calendar = document.querySelector('[data-form-date]');
+  const value = input.value;
   const date = calendar.value;
-  //const dateFormat = moment(date).format('DD/MM/YYYY');
-  //console.log(dateFormat);
-
-
-  //estilos
+  const dateFormat = moment(date).format('DD/MM/YYYY');
+  console.log(dateFormat);
+  const task = document.createElement('li');
   task.classList.add('card');
-  titleTask.classList.add("task");
-  
-  //comportamiento
-  entrada.value = "";
-  titleTask.innerText = valorEntrada;
-  taskContent.appendChild(checkComplete());  // div ap <i>
-  taskContent.appendChild(titleTask);        // div ap span, c/innerText
-  task.appendChild(taskContent);             // li ap la estructura anterior
-  task.appendChild(deleteIcon());            // li ap <i>
-  listaTareas.appendChild(task);             // <ul data-list> ap li
-}
+  input.value = '';
+  //backticks
+  const taskContent = document.createElement('div');
 
-//evento
-boton.addEventListener('click', creartask);
+  const titleTask = document.createElement('span');
+  titleTask.classList.add('task');
+  titleTask.innerText = value;
+  taskContent.appendChild(checkComplete());
+  taskContent.appendChild(titleTask);
+  // task.innerHTML = content;
+  const dateElement = document.createElement('span');
+  dateElement.innerHTML = dateFormat;
+  task.appendChild(taskContent);
+  task.appendChild(dateElement);
+  task.appendChild(deleteIcon());
+  return task;
+};
 
-//})(); //IIFE para agregar después.
+//Arrow functions o funciones anonimas
+btn.addEventListener('click', addTask);
