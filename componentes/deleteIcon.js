@@ -4,11 +4,11 @@ const deleteIcon = () => {
     i.addEventListener("click", deleteTask);
   
     return i;
-  }
+  };
 
   const deleteTask = (evento) => {
     const elementoPadre = evento.target.parentElement;
     elementoPadre.remove();
-  }
+  };
 
   export default deleteIcon;

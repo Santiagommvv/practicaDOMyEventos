@@ -4,7 +4,7 @@ const checkComplete = () => {
     i.addEventListener('click', completeTask);
   
     return i;
-  }
+  };
 
   const completeTask = (evento) => {
     const elemento = evento.target;
